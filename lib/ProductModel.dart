@@ -16,6 +16,7 @@ class ProductModel {
       this.image,
       this.rating});
 
+  //converting json to Dart object known as data serialize
   ProductModel.fromJson(Map<String, dynamic> json) {
     id = json['id'];
     title = json['title'];
@@ -27,6 +28,9 @@ class ProductModel {
         json['rating'] != null ? new Rating.fromJson(json['rating']) : null;
   }
 
+
+  //converting the dart object backt o json, this requires if we send data to server 
+  //this is also known as data deSerialization 
   Map<String, dynamic> toJson() {
     final Map<String, dynamic> data = new Map<String, dynamic>();
     data['id'] = this.id;
